@@ -6,12 +6,12 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 11:36:02 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/01/28 18:52:43 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/01/28 20:38:40 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
 # include "libft/libft.h"
 
@@ -30,7 +30,10 @@ typedef struct s_ps
 	t_list			*b;
 }					t_ps;
 
+//ps-initialize
 int		initialize(t_ps *ps, int argc, char **argv);
+//ps-utils
+int		is_int(const char *nptr);
 void	del(void *content);
 
 #endif

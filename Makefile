@@ -6,7 +6,7 @@
 #    By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/27 19:31:29 by abessa-m          #+#    #+#              #
-#    Updated: 2025/01/28 18:26:40 by abessa-m         ###   ########.fr        #
+#    Updated: 2025/01/28 20:24:18 by abessa-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ test: re
 	"Comment is invalid in this scope" \
 	| grep Error ; echo -n "$(COR)\n" ; \
 	valgrind --quiet -s --leak-check=full \
-	./push_swap 2 2 5 ; \
+	./push_swap 0 -442 -2 225 2 42 ; \
 	echo "\nReturn value: $$?" ; \
 	$(RM) *.o *.gch ; \
 	make --no-print-directory -C libft/ clean 
@@ -34,7 +34,8 @@ AR			:= ar rcs
 HEADERS		= push_swap.h
 SRCS		= \
 	push_swap.c \
-	ps_initialize.c
+	ps-initialize.c \
+	ps-utils.c
 OBJS		= $(SRCS:.c=.o)
 ##################################################################### Targets  #
 all: $(LIBFT) $(NAME)

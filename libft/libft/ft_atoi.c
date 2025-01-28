@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 05:22:24 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/01/28 15:50:02 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/01/28 19:39:27 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int			nbr;
-	int			sign;
-	size_t		j;
+	int		nbr;
+	int		sign;
+	size_t	j;
 
 	j = 0;
 	while (nptr[j] == 32
