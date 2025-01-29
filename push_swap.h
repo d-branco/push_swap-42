@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 11:36:02 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/01/29 08:12:16 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:40:08 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,17 @@ typedef struct s_ps
 }					t_ps;
 
 //ps-initialize
-int		initialize(t_ps *ps, int argc, char **argv);
+int		initialize(t_ps *ps, int argc, char **argv, int verbose);
 //ps-utils
 void	print_stacks(t_ps *ps);
 int		is_int(const char *nptr);
 void	del(void *content);
-//ps-operations
+//ps-op-swap
 void	swap_a(t_ps *ps);
+void	swap_b(t_ps *ps);
+void	swap_ss(t_ps *ps);
+//ps-op-push
+void	push_a(t_ps *ps);
+void	push_b(t_ps *ps);
 
 #endif

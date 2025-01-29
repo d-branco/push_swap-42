@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 19:39:53 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/01/29 08:12:06 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:34:57 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	print_stacks(t_ps *ps)
 
 	if (ps->verbose)
 	{
+		ft_printf("\033[1;90m");
 		ft_printf("a(%i): ", ft_lstsize(ps->a));
 		lst = (ps->a);
 		while (lst)
@@ -32,7 +33,7 @@ void	print_stacks(t_ps *ps)
 			ft_printf("%s ", lst->content);
 			lst = lst->next;
 		}
-		ft_printf("\n");
+		ft_printf("\033[0m\n");
 	}
 }
 

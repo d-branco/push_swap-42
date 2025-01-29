@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 16:44:16 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/01/29 08:17:12 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:08:26 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@
 
 static int	is_valid_int(int argc, char **argv);
 
-int	initialize(t_ps *ps, int argc, char **argv)
+int	initialize(t_ps *ps, int argc, char **argv, int verbose)
 {
 	int	i;
 
-	ps->verbose = 0;
+	ps->verbose = verbose;
 	ps->a = NULL;
 	ps->b = NULL;
 	if (is_valid_int(argc, argv) != 0)
@@ -44,7 +44,6 @@ int	initialize(t_ps *ps, int argc, char **argv)
 		i++;
 	}
 	if (ps->verbose)
-		ft_printf("\n");
 		ft_printf("\n");
 	return (0);
 }
