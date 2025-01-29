@@ -6,7 +6,7 @@
 #    By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/27 19:31:29 by abessa-m          #+#    #+#              #
-#    Updated: 2025/01/28 20:24:18 by abessa-m         ###   ########.fr        #
+#    Updated: 2025/01/28 21:37:42 by abessa-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,8 @@ HEADERS		= push_swap.h
 SRCS		= \
 	push_swap.c \
 	ps-initialize.c \
-	ps-utils.c
+	ps-utils.c \
+	ps-operations.c
 OBJS		= $(SRCS:.c=.o)
 ##################################################################### Targets  #
 all: $(LIBFT) $(NAME)

@@ -6,11 +6,35 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 19:39:53 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/01/28 20:29:48 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/01/29 08:12:06 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	print_stacks(t_ps *ps)
+{
+	t_list	*lst;
+
+	if (ps->verbose)
+	{
+		ft_printf("a(%i): ", ft_lstsize(ps->a));
+		lst = (ps->a);
+		while (lst)
+		{
+			ft_printf("%s ", lst->content);
+			lst = lst->next;
+		}
+		ft_printf("\nb(%i): ", ft_lstsize(ps->b));
+		lst = (ps->b);
+		while (lst)
+		{
+			ft_printf("%s ", lst->content);
+			lst = lst->next;
+		}
+		ft_printf("\n");
+	}
+}
 
 //Does not accep invalid int
 int	is_int(const char *nptr)
