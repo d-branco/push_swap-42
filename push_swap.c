@@ -6,13 +6,11 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 11:35:47 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/01/29 19:16:39 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/01/29 22:09:45 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	print_stacks(t_ps *ps);
 
 int	main(int argc, char **argv)
 {
@@ -27,6 +25,8 @@ int	main(int argc, char **argv)
 	print_stacks(&ps);
 	if (ft_lstsize(ps.a) <= 3)
 		algo_small(&ps);
+	else
+		algo_turk(&ps);
 	ft_lstclear(&ps.a, (void (*)(void *))del);
 	ft_lstclear(&ps.b, (void (*)(void *))del);
 }

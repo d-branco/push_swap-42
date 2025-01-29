@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 11:36:02 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/01/29 18:14:47 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/01/29 22:00:09 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ typedef struct s_ps
 {
 	int				verbose;
 	t_list			*a;
+	t_list			*index_a;
 	t_list			*b;
+	t_list			*index_b;
 }					t_ps;
 
 //ps-initialize
@@ -55,5 +57,7 @@ void	reverse_rr(t_ps *ps);
 int		check_order(t_ps *ps, char chr);
 //ps-algo-small
 int		algo_small(t_ps *ps);
+//ps-algo-turk
+int		algo_turk(t_ps *ps);
 
 #endif

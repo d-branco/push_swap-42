@@ -6,7 +6,7 @@
 #    By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/27 19:31:29 by abessa-m          #+#    #+#              #
-#    Updated: 2025/01/29 19:10:58 by abessa-m         ###   ########.fr        #
+#    Updated: 2025/01/29 22:11:56 by abessa-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,15 +15,16 @@ test: re
 	@echo -n "$(YELLOW)" ; \
 	norminette *.c | grep -v -E \
 	"Comment is invalid in this scope" \
-	| grep Error ; echo -n "$(COR)\n" ; \
+	| grep Error ; echo -n "$(COR)" ; \
 	valgrind --quiet -s --leak-check=full \
-	./push_swap 0 2 1 ; \
-	echo "$(GRAY)Return value: $$?$(COR)" ; \
-	valgrind --quiet -s --leak-check=full \
-	./push_swap "0 2 1" ; \
+	./push_swap -1 0 2 9 ; \
 	echo "$(GRAY)Return value: $$?$(COR)" ; \
 	$(RM) *.o *.gch ; \
 	make --no-print-directory -C libft/ clean 
+
+#	valgrind --quiet -s --leak-check=full \
+#	./push_swap "0 2 1" ; \
+#	echo "$(GRAY)Return value: $$?$(COR)" ; \
 
 NAME		:= push_swap
 LIBFT		:= libft.a
@@ -44,7 +45,8 @@ SRCS		= \
 	ps-op-rotate.c \
 	ps-op-reverse.c \
 	ps-check.c \
-	ps-algo-small.c 
+	ps-algo-small.c \
+	ps-algo-turk.c 
 OBJS		= $(SRCS:.c=.o)
 ##################################################################### Targets  #
 all: $(LIBFT) $(NAME)
