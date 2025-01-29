@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 11:36:02 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/01/29 10:40:08 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/01/29 11:49:11 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,13 @@ void	swap_ss(t_ps *ps);
 //ps-op-push
 void	push_a(t_ps *ps);
 void	push_b(t_ps *ps);
+//ps-op-rotate
+void	rotate_a(t_ps *ps);
+void	rotate_b(t_ps *ps);
+void	rotate_rr(t_ps *ps);
+//ps-op-reverse
+void	reverse_a(t_ps *ps);
+void	reverse_b(t_ps *ps);
+void	reverse_rr(t_ps *ps);
 
 #endif

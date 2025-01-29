@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 08:48:39 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/01/29 10:49:00 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/01/29 11:51:49 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ pb (push b):
 //t_list	*ft_lstnew(void *content)
 
 static void	take_element(t_list **lsta, t_list **lstb);
+static int	push(t_ps *ps, char chr);
 
 static int	push(t_ps *ps, char chr)
 {
@@ -43,7 +44,7 @@ static int	push(t_ps *ps, char chr)
 	if (!*lstb)
 	{
 		if (ps->verbose)
-			ft_printf("	no element on top to push to %c\n", chr);
+			ft_printf("		no element on top to push to %c\n", chr);
 		return (1);
 	}
 	if (ps->verbose)
@@ -84,17 +85,3 @@ void	push_b(t_ps *ps)
 		ft_printf("pb\n");
 	print_stacks(ps);
 }
-
-/*
-ra (rotate a):	Shift up all elements of stack a by 1.
-				The first element becomes the last one.
-rb (rotate b):	Shift up all elements of stack b by 1.
-				The first element becomes the last one.
-rr : ra and rb at the same time.
-
-rra (reverse rotate a):	Shift down all elements of stack a by 1.
-				The last element becomes the first one.
-rrb (reverse rotate b):	Shift down all elements of stack b by 1.
-				The last element becomes the first one.
-rrr : rra and rrb at the same time.
-*/

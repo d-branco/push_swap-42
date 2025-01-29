@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 21:30:22 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/01/29 10:54:10 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/01/29 11:13:16 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,17 @@ ss : sa and sb at the same time.
 */
 
 static void	swap_element(t_list **lst);
+static int	swap_top(t_ps *ps, char chr);
 
 static int	swap_top(t_ps *ps, char chr)
 {
 	t_list	**lst;
 
-	if (chr == 'a')
-		lst = &(ps->a);
-	else if (chr == 'b')
+	lst = &(ps->a);
+	if (chr == 'b')
 		lst = &(ps->b);
+	else if (chr != 'a')
+		return (2);
 	if (ps->verbose)
 		ft_printf("	"
 			"swaping the first 2 elements at the top of stack %c\n", chr);
