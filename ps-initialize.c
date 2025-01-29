@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 16:44:16 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/01/29 10:08:26 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/01/29 14:20:02 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,29 +23,91 @@
 //t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 static int	is_valid_int(int argc, char **argv);
+static int	is_valid_str(int argc, char **argv);
+static void	free_array(char **arr);
+static int	add_numbers_to_stack(t_ps *ps, char **numbers);
 
 int	initialize(t_ps *ps, int argc, char **argv, int verbose)
 {
-	int	i;
+	char	**splitted_str;
+	int		result;
 
 	ps->verbose = verbose;
 	ps->a = NULL;
 	ps->b = NULL;
-	if (is_valid_int(argc, argv) != 0)
-		return (1);
-	i = 1;
+	if (is_valid_int(argc, argv) == 0)
+		return (add_numbers_to_stack(ps, argv + 1));
+	else if (is_valid_str(argc, argv) == 0)
+	{
+		splitted_str = ft_split(argv[1], ' ');
+		if (!splitted_str)
+			return (2);
+		result = add_numbers_to_stack(ps, splitted_str);
+		free_array(splitted_str);
+		return (result);
+	}
+	return (1);
+}
+
+static int	add_numbers_to_stack(t_ps *ps, char **numbers)
+{
+	int	i;
+
 	if (ps->verbose)
 		ft_printf("Adding to the bottom of stack a: ");
-	while (i < argc)
+	i = 0;
+	while (numbers[i])
 	{
 		if (ps->verbose)
-			ft_printf("%i ", ft_atoi(argv[i]));
-		ft_lstadd_back(&ps->a, ft_lstnew(ft_strdup(argv[i])));
+			ft_printf("%i ", ft_atoi(numbers[i]));
+		ft_lstadd_back(&ps->a, ft_lstnew(ft_strdup(numbers[i])));
 		i++;
 	}
 	if (ps->verbose)
 		ft_printf("\n");
 	return (0);
+}
+
+static void	free_array(char **arr)
+{
+	int	i;
+
+	i = 0;
+	while (arr[i])
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr[i]);
+	free(arr);
+}
+
+static int	is_valid_str(int argc, char **argv)
+{
+	char	**splitted_str;
+	int		i;
+	int		j;
+
+	if (argc != 2)
+		return (4);
+	splitted_str = ft_split(argv[1], ' ');
+	if (!splitted_str)
+		return (3);
+	i = 0;
+	while (splitted_str[i])
+	{
+		if (is_int(splitted_str[i]) != 0)
+			return (free_array(splitted_str), 1);
+		j = i + 1;
+		while (splitted_str[j])
+		{
+			if (ft_atoi(splitted_str[i]) == ft_atoi(splitted_str[j]))
+				return (free_array(splitted_str), 2);
+			j++;
+		}
+		i++;
+	}
+	return (free_array(splitted_str), 0);
 }
 
 static int	is_valid_int(int argc, char **argv)

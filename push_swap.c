@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 11:35:47 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/01/29 11:52:51 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/01/29 14:20:37 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void	print_stacks(t_ps *ps);
 
 int	main(int argc, char **argv)
 {
-	t_ps	ps;
 	int		verbose;
+	t_ps	ps;
 
 	verbose = 0;
 	if (argc == 1)
