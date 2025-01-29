@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 11:35:47 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/01/29 17:32:19 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/01/29 18:26:14 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int	main(int argc, char **argv)
 	if (initialize(&ps, argc, argv, verbose) != 0)
 		return (ft_putstr_fd("Error\n", 2), 1);
 	print_stacks(&ps);
-	if (ft_lstsize((ps.a)) <= 3)
-		ft_printf("Stack a is smaller or equal than 3!\n");
+	if (ft_lstsize(ps.a) <= 3)
+		return (algo_small(&ps), 0);
 	if (check_order(&ps, 'a') == 0)
 		return (0);
 	ft_lstclear(&ps.a, (void (*)(void *))del);

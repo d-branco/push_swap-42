@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 11:36:02 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/01/29 17:26:18 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/01/29 18:14:47 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,7 @@ void	reverse_b(t_ps *ps);
 void	reverse_rr(t_ps *ps);
 //ps-check
 int		check_order(t_ps *ps, char chr);
+//ps-algo-small
+int		algo_small(t_ps *ps);
 
 #endif

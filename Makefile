@@ -6,7 +6,7 @@
 #    By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/27 19:31:29 by abessa-m          #+#    #+#              #
-#    Updated: 2025/01/29 17:22:23 by abessa-m         ###   ########.fr        #
+#    Updated: 2025/01/29 18:15:05 by abessa-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,8 @@ SRCS		= \
 	ps-op-push.c \
 	ps-op-rotate.c \
 	ps-op-reverse.c \
-	ps-check.c 
+	ps-check.c \
+	ps-algo-small.c 
 OBJS		= $(SRCS:.c=.o)
 ##################################################################### Targets  #
 all: $(LIBFT) $(NAME)
