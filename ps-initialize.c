@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 16:44:16 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/01/28 20:37:53 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/01/29 08:13:41 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	initialize(t_ps *ps, int argc, char **argv)
 		i++;
 	}
 	if (ps->verbose)
-		ft_printf("\n\n");
+		ft_printf("\n");
 	return (0);
 }
 
