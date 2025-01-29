@@ -6,7 +6,7 @@
 #    By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/27 19:31:29 by abessa-m          #+#    #+#              #
-#    Updated: 2025/01/29 18:15:05 by abessa-m         ###   ########.fr        #
+#    Updated: 2025/01/29 19:10:58 by abessa-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,10 +17,10 @@ test: re
 	"Comment is invalid in this scope" \
 	| grep Error ; echo -n "$(COR)\n" ; \
 	valgrind --quiet -s --leak-check=full \
-	./push_swap 0 -442 -2 225 2 42 ; \
+	./push_swap 0 2 1 ; \
 	echo "$(GRAY)Return value: $$?$(COR)" ; \
 	valgrind --quiet -s --leak-check=full \
-	./push_swap "0 -442 -2 225 2 42"; \
+	./push_swap "0 2 1" ; \
 	echo "$(GRAY)Return value: $$?$(COR)" ; \
 	$(RM) *.o *.gch ; \
 	make --no-print-directory -C libft/ clean 
