@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 16:44:16 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/01/30 09:22:11 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/01/30 17:44:03 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,7 @@ int	initialize(t_ps *ps, int argc, char **argv, int verbose)
 
 	ps->verbose = verbose;
 	ps->a = NULL;
-	ps->index_a = NULL;
 	ps->b = NULL;
-	ps->index_b = NULL;
 	result = 1;
 	if (is_valid_int(argc, argv) == 0)
 		result = add_numbers_to_stack(ps, argv + 1);
@@ -47,8 +45,6 @@ int	initialize(t_ps *ps, int argc, char **argv, int verbose)
 		result = add_numbers_to_stack(ps, splitted_str);
 		free_array(splitted_str);
 	}
-	//if (result == 0)
-	//	compose_indexes(ps);
 	return (result);
 }
 

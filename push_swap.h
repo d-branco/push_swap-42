@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 11:36:02 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/01/30 07:43:47 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/01/30 16:53:06 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 /*
 typedef struct s_list
 {
-	void			*content;
+	int				content;
 	struct s_list	*next;
 }					t_list;
 */
@@ -27,9 +27,7 @@ typedef struct s_ps
 {
 	int				verbose;
 	t_list			*a;
-	t_list			*index_a;
 	t_list			*b;
-	t_list			*index_b;
 }					t_ps;
 
 //ps-initialize
@@ -58,7 +56,15 @@ void	reverse_rr(t_ps *ps);
 int		check_order(t_ps *ps, char chr);
 //ps-algo-small
 int		algo_small(t_ps *ps);
-//ps-algo-turk
-int		algo_turk(t_ps *ps);
+//ps-algo-buble
+int		algo_buble(t_ps *ps, char chr);
+int		nbr(t_ps *ps, char chr, int n);
+int		stack_len(t_ps *ps, char chr);
+int		max(t_ps *ps, char chr);
+//ps-op
+void	push_stack(t_ps *ps, char chr);
+void	swap_stack(t_ps *ps, char chr);
+void	rotate_stack(t_ps *ps, char chr);
+void	reverse_stack(t_ps *ps, char chr);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/27 19:31:29 by abessa-m          #+#    #+#              #
-#    Updated: 2025/01/29 22:11:56 by abessa-m         ###   ########.fr        #
+#    Updated: 2025/01/30 15:23:55 by abessa-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,8 @@ NAME		:= push_swap
 LIBFT		:= libft.a
 #################################################################### Compiler  #
 CC			:= cc
-CFLAGS		:= -g  -Wall -Wextra -Werror
+CFLAGS		:= -g  -Wall -Wextra 
+#-Werror
 ########################################################## Intermidiate steps  #
 RM			:= rm -f
 AR			:= ar rcs
@@ -46,7 +47,10 @@ SRCS		= \
 	ps-op-reverse.c \
 	ps-check.c \
 	ps-algo-small.c \
-	ps-algo-turk.c 
+	ps-algo-turk.c \
+	ps-algo-merge.c \
+	ps-algo-buble.c \
+	ps-op.c 
 OBJS		= $(SRCS:.c=.o)
 ##################################################################### Targets  #
 all: $(LIBFT) $(NAME)
