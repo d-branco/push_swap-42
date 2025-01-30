@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 11:36:02 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/01/29 22:00:09 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/01/30 07:43:47 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct s_ps
 //ps-initialize
 int		initialize(t_ps *ps, int argc, char **argv, int verbose);
 //ps-utils
+void	compose_indexes(t_ps *ps);
 void	print_stacks(t_ps *ps);
 int		is_int(const char *nptr);
 void	del(void *content);

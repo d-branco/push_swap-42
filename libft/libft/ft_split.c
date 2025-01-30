@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 13:03:20 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/01/29 13:53:33 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/01/30 07:41:12 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@
 //	size_t, ft_substr(), NULL
 //	char	**ft_split(char const *s, char c)
 
-static void		free_array(char **arr, size_t size);
+void			free_array(char **arr);
 static size_t	count_segments(char const *s, char c);
 static size_t	get_segment_length(char const *s, char c);
 static char		**allocate_segments(char **arr,
@@ -108,7 +108,7 @@ static char	**allocate_segments(char **arr,
 			i++;
 		arr[seg] = malloc(get_segment_length(&s[i], c) + 1);
 		if (!arr[seg])
-			return (free_array(arr, seg), NULL);
+			return (free_array(arr), NULL);
 		while (s[i] && s[i] != c)
 		{
 			arr[seg][j] = s[i];
@@ -121,12 +121,12 @@ static char	**allocate_segments(char **arr,
 	return (arr);
 }
 
-static void	free_array(char **arr, size_t size)
+void	free_array(char **arr)
 {
 	size_t	i;
 
 	i = 0;
-	while (i < size)
+	while (arr[i])
 	{
 		free(arr[i]);
 		i++;

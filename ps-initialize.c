@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 16:44:16 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/01/29 22:00:21 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/01/30 09:22:11 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@
 
 static int	is_valid_int(int argc, char **argv);
 static int	is_valid_str(int argc, char **argv);
-static void	free_array(char **arr);
 static int	add_numbers_to_stack(t_ps *ps, char **numbers);
 
 int	initialize(t_ps *ps, int argc, char **argv, int verbose)
@@ -37,8 +36,9 @@ int	initialize(t_ps *ps, int argc, char **argv, int verbose)
 	ps->index_a = NULL;
 	ps->b = NULL;
 	ps->index_b = NULL;
+	result = 1;
 	if (is_valid_int(argc, argv) == 0)
-		return (add_numbers_to_stack(ps, argv + 1));
+		result = add_numbers_to_stack(ps, argv + 1);
 	else if (is_valid_str(argc, argv) == 0)
 	{
 		splitted_str = ft_split(argv[1], ' ');
@@ -46,42 +46,34 @@ int	initialize(t_ps *ps, int argc, char **argv, int verbose)
 			return (2);
 		result = add_numbers_to_stack(ps, splitted_str);
 		free_array(splitted_str);
-		return (result);
 	}
-	return (1);
+	//if (result == 0)
+	//	compose_indexes(ps);
+	return (result);
 }
 
 static int	add_numbers_to_stack(t_ps *ps, char **numbers)
 {
 	int	i;
+	int	*num;
 
 	if (ps->verbose)
 		ft_printf("Adding to the bottom of stack a: ");
 	i = 0;
 	while (numbers[i])
 	{
+		num = (int *) malloc(sizeof(int) * 1);
+		if (!num)
+			return (3);
+		*num = ft_atoi(numbers[i]);
 		if (ps->verbose)
-			ft_printf("%i ", ft_atoi(numbers[i]));
-		ft_lstadd_back(&ps->a, ft_lstnew(ft_strdup(numbers[i])));
+			ft_printf("%i ", (*num));
+		ft_lstadd_back(&ps->a, ft_lstnew(num));
 		i++;
 	}
 	if (ps->verbose)
 		ft_printf("\n");
 	return (0);
-}
-
-static void	free_array(char **arr)
-{
-	int	i;
-
-	i = 0;
-	while (arr[i])
-	{
-		free(arr[i]);
-		i++;
-	}
-	free(arr[i]);
-	free(arr);
 }
 
 static int	is_valid_str(int argc, char **argv)
