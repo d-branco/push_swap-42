@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 14:47:14 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/02/01 11:47:55 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/02/01 12:35:35 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ int	algo_buble(t_ps *ps, char chr)
 	{
 		if (ps->verbose)
 		{
-			ft_printf("Buble sort: comparing postions 1 (%i) and 2 (%i)"
-				"\n", nbr(ps, chr, 1), nbr(ps, chr, 2));
+			ft_printf("Buble sort: comparing postions 1 (%i) and 2 (%i)\n"
+				"", get_nbr_from_pos(ps, chr, 1), get_nbr_from_pos(ps, chr, 2));
 		}
-		if ((nbr(ps, chr, 1) > nbr(ps, chr, 2))
-			&& (nbr(ps, chr, 1) != max(ps, chr)))
+		if ((get_nbr_from_pos(ps, chr, 1) > get_nbr_from_pos(ps, chr, 2))
+			&& (get_nbr_from_pos(ps, chr, 1) != max(ps, chr)))
 			swap_stack(ps, chr);
 		else
 			rotate_stack(ps, chr);

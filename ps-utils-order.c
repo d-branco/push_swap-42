@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 11:24:38 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/02/01 11:26:00 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/02/01 14:01:53 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	max(t_ps *ps, char chr)
 	return (max);
 }
 
-int	nbr(t_ps *ps, char chr, int n)
+int	get_nbr_from_pos(t_ps *ps, char chr, int n)
 {
 	t_list	*lst;
 	int		pos;
@@ -68,4 +68,24 @@ int	nbr(t_ps *ps, char chr, int n)
 		pos++;
 	}
 	return (*(int *) lst->content);
+}
+
+int	get_pos_from_value(t_ps *ps, char chr, int value)
+{
+	t_list	*lst;
+	int		pos;
+
+	if (chr == 'a')
+		lst = (ps->a);
+	if (chr == 'b')
+		lst = (ps->b);
+	pos = 1;
+	while (lst != NULL)
+	{
+		if (*(int *) lst->content == value)
+			break ;
+		lst = lst->next;
+		pos++;
+	}
+	return (pos);
 }
