@@ -6,7 +6,7 @@
 #    By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/27 19:31:29 by abessa-m          #+#    #+#              #
-#    Updated: 2025/01/30 15:23:55 by abessa-m         ###   ########.fr        #
+#    Updated: 2025/02/01 11:24:30 by abessa-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ test: re
 	"Comment is invalid in this scope" \
 	| grep Error ; echo -n "$(COR)" ; \
 	valgrind --quiet -s --leak-check=full \
-	./push_swap -1 0 2 9 ; \
+	./push_swap -1 42 2  3 ; \
 	echo "$(GRAY)Return value: $$?$(COR)" ; \
 	$(RM) *.o *.gch ; \
 	make --no-print-directory -C libft/ clean 
@@ -40,7 +40,8 @@ HEADERS		= push_swap.h
 SRCS		= \
 	push_swap.c \
 	ps-initialize.c \
-	ps-utils.c \
+	ps-utils-stack.c \
+	ps-utils-order.c \
 	ps-op-swap.c \
 	ps-op-push.c \
 	ps-op-rotate.c \
@@ -48,7 +49,6 @@ SRCS		= \
 	ps-check.c \
 	ps-algo-small.c \
 	ps-algo-turk.c \
-	ps-algo-merge.c \
 	ps-algo-buble.c \
 	ps-op.c 
 OBJS		= $(SRCS:.c=.o)

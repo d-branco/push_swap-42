@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps-utils.c                                         :+:      :+:    :+:   */
+/*   ps-utils-stack.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 19:39:53 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/01/30 09:32:38 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/02/01 11:25:24 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,17 @@ void	del(void *content)
 {
 	if (content)
 		free(content);
+}
+
+int	stack_len(t_ps *ps, char chr)
+{
+	t_list	**lst;
+	int		len;
+
+	if (chr == 'a')
+		lst = &(ps->a);
+	if (chr == 'b')
+		lst = &(ps->b);
+	len = ft_lstsize(*lst);
+	return (len);
 }
