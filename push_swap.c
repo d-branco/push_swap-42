@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 11:35:47 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/02/01 14:23:42 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/02/01 15:10:52 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(int argc, char **argv)
 	int		verbose;
 	t_ps	ps;
 
-	verbose = 0;
+	verbose = 1;
 	if (argc == 1)
 		return (1);
 	if (initialize(&ps, argc, argv, verbose) != 0)
@@ -26,7 +26,7 @@ int	main(int argc, char **argv)
 	if (ft_lstsize(ps.a) <= 3)
 		algo_small(&ps);
 	else
-		algo_buble(&ps, 'a');
+		algo_quick(&ps);
 	ft_lstclear(&ps.a, (void (*)(void *))del);
 	ft_lstclear(&ps.b, (void (*)(void *))del);
 }

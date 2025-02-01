@@ -6,7 +6,7 @@
 #    By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/27 19:31:29 by abessa-m          #+#    #+#              #
-#    Updated: 2025/02/01 13:53:47 by abessa-m         ###   ########.fr        #
+#    Updated: 2025/02/01 15:28:23 by abessa-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ test: re
 	"Comment is invalid in this scope" \
 	| grep Error ; echo -n "$(COR)" ; \
 	valgrind --quiet -s --leak-check=full \
-	./push_swap -2147483648 2147483647 42 -1 1 2 -2 0 225 ; \
+	./push_swap 1 2 -3 -8 7 4 6 -7 -5 3 -4 -6 9 8 -2 5 -1 -9 0 ; \
 	echo "$(GRAY)Return value: $$?$(COR)" ; \
 	$(RM) *.o *.gch ; \
 	make --no-print-directory -C libft/ clean 
@@ -51,6 +51,7 @@ SRCS		= \
 	ps-algo-small.c \
 	ps-algo-turk.c \
 	ps-algo-buble.c \
+	ps-algo-quick.c \
 	ps-op.c 
 OBJS		= $(SRCS:.c=.o)
 ##################################################################### Targets  #

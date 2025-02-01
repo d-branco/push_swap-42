@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 11:36:02 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/02/01 13:59:34 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/02/01 15:12:05 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,8 @@ int		check_order(t_ps *ps, char chr);
 int		algo_small(t_ps *ps);
 //ps-algo-buble
 int		algo_buble(t_ps *ps, char chr);
-
+//ps-algo-quick
+int		algo_quick(t_ps *ps);
 //ps-op
 void	push_stack(t_ps *ps, char chr);
 void	swap_stack(t_ps *ps, char chr);
@@ -66,7 +67,7 @@ void	rotate_stack(t_ps *ps, char chr);
 void	reverse_stack(t_ps *ps, char chr);
 //ps-utils-order
 int		get_pos_from_value(t_ps *ps, char chr, int value);
-int		get_nbr_from_pos(t_ps *ps, char chr, int n);
+int		get_value_from_pos(t_ps *ps, char chr, int n);
 int		max(t_ps *ps, char chr);
 int		min(t_ps *ps, char chr);
 int		stack_len(t_ps *ps, char chr);
