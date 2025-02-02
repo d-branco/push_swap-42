@@ -6,7 +6,7 @@
 #    By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/27 19:31:29 by abessa-m          #+#    #+#              #
-#    Updated: 2025/02/02 13:41:18 by abessa-m         ###   ########.fr        #
+#    Updated: 2025/02/02 21:23:58 by abessa-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ SRCS		= \
 	ps-algo-small.c \
 	ps-algo-turk.c \
 	ps-algo-buble.c \
-	ps-algo-quick.c ps-algo-quick-eco.c 
+	ps-algo-quick.c ps-algo-quick-eco.c ps-algo-quick-move.c 
 	
 OBJS		= $(SRCS:.c=.o)
 ##################################################################### Targets  #

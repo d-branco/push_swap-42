@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 11:36:02 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/02/02 17:32:21 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/02/02 22:09:50 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,12 @@ void	swap_ss(t_ps *ps);
 void	push_a(t_ps *ps);
 void	push_b(t_ps *ps);
 //ps-op-rotate
+int		rotate(t_ps *ps, char chr);
 void	rotate_a(t_ps *ps);
 void	rotate_b(t_ps *ps);
 void	rotate_rr(t_ps *ps);
 //ps-op-reverse
+int		reverse(t_ps *ps, char chr);
 void	reverse_a(t_ps *ps);
 void	reverse_b(t_ps *ps);
 void	reverse_rr(t_ps *ps);
@@ -68,6 +70,10 @@ int		algo_buble(t_ps *ps, char chr);
 int		algo_quick(t_ps *ps);
 //ps-algo-quick-eco
 t_eco	economic_operation(t_ps *ps);
+//ps-algo-quick-move
+void	move_to_b(t_ps *ps);
+void	quick_move(t_ps *ps);
+int		find_nth_smallest(t_ps *ps, char chr, int len);
 //ps-op
 void	push_stack(t_ps *ps, char chr);
 void	swap_stack(t_ps *ps, char chr);

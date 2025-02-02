@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 10:59:35 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/01/29 11:52:24 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/02/02 17:53:19 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,9 @@ rb (rotate b):	Shift up all elements of stack b by 1.
 rr : ra and rb at the same time.
 */
 
-static int	rotate(t_ps *ps, char chr);
 static void	rotate_element(t_list **lst);
 
-static int	rotate(t_ps *ps, char chr)
+int	rotate(t_ps *ps, char chr)
 {
 	t_list	**lst;
 
