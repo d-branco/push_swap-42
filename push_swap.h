@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 11:36:02 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/02/02 14:12:30 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/02/02 17:32:21 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct s_eco
 {
 	int		cost;
 	int		next_a;
+	int		next_b;
 	int		reverse_direction;
 }			t_eco;
 
@@ -66,7 +67,7 @@ int		algo_buble(t_ps *ps, char chr);
 //ps-algo-quick
 int		algo_quick(t_ps *ps);
 //ps-algo-quick-eco
-t_eco	eco_cheapest_op(t_ps *ps);
+t_eco	economic_operation(t_ps *ps);
 //ps-op
 void	push_stack(t_ps *ps, char chr);
 void	swap_stack(t_ps *ps, char chr);
