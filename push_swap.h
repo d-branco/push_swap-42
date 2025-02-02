@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 11:36:02 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/02/01 15:12:05 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/02/02 14:12:30 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,25 @@
 
 # include "libft/libft.h"
 
-/*
-typedef struct s_list
-{
-	int				content;
-	struct s_list	*next;
-}					t_list;
-*/
+//typedef struct s_list
+//{
+//	int				content;
+//	struct s_list	*next;
+//}					t_list;
 
 typedef struct s_ps
 {
-	int				verbose;
-	t_list			*a;
-	t_list			*b;
-}					t_ps;
+	int		verbose;
+	t_list	*a;
+	t_list	*b;
+}			t_ps;
+
+typedef struct s_eco
+{
+	int		cost;
+	int		next_a;
+	int		reverse_direction;
+}			t_eco;
 
 //ps-initialize
 int		initialize(t_ps *ps, int argc, char **argv, int verbose);
@@ -60,6 +65,8 @@ int		algo_small(t_ps *ps);
 int		algo_buble(t_ps *ps, char chr);
 //ps-algo-quick
 int		algo_quick(t_ps *ps);
+//ps-algo-quick-eco
+t_eco	eco_cheapest_op(t_ps *ps);
 //ps-op
 void	push_stack(t_ps *ps, char chr);
 void	swap_stack(t_ps *ps, char chr);

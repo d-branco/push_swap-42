@@ -6,7 +6,7 @@
 #    By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/27 19:31:29 by abessa-m          #+#    #+#              #
-#    Updated: 2025/02/01 15:28:23 by abessa-m         ###   ########.fr        #
+#    Updated: 2025/02/02 13:41:18 by abessa-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,19 +40,14 @@ HEADERS		= push_swap.h
 SRCS		= \
 	push_swap.c \
 	ps-initialize.c \
-	ps-utils-stack.c \
-	ps-utils-order.c \
-	ps-utils-median.c \
-	ps-op-swap.c \
-	ps-op-push.c \
-	ps-op-rotate.c \
-	ps-op-reverse.c \
+	ps-utils-stack.c ps-utils-order.c ps-utils-median.c \
+	ps-op.c ps-op-swap.c ps-op-push.c ps-op-rotate.c ps-op-reverse.c \
 	ps-check.c \
 	ps-algo-small.c \
 	ps-algo-turk.c \
 	ps-algo-buble.c \
-	ps-algo-quick.c \
-	ps-op.c 
+	ps-algo-quick.c ps-algo-quick-eco.c 
+	
 OBJS		= $(SRCS:.c=.o)
 ##################################################################### Targets  #
 all: $(LIBFT) $(NAME)

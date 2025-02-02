@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 17:59:51 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/01/30 09:41:29 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/02/02 14:26:08 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ static int	algo_three(t_ps *ps);
 
 int	algo_small(t_ps *ps)
 {
+	if (ps->verbose)
+		ft_printf("\033[34mOrdering stack a\033[0m\n");
 	if (ft_lstsize(ps->a) == 1)
 	{
 		if (ps->verbose)
