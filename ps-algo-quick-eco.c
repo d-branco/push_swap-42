@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 13:39:18 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/02/02 20:36:07 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/02/03 08:44:33 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static t_eco	eco_cheapest_op(t_ps *ps)
 	eco.reverse_direction = 0;
 	while (a <= stack_len(ps, 'a'))
 	{
-		if (min(ps, 'a') != get_value_from_pos(ps, 'a', a))
+		//if (min(ps, 'a') != get_value_from_pos(ps, 'a', a))
 		{
 			b = 1;
 			while (b <= stack_len(ps, 'b'))

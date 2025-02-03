@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 20:49:20 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/02/02 22:42:28 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/02/03 09:59:50 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,14 @@ void	quick_move(t_ps *ps)
 	int	j;
 
 	divisions = 4;
-	//if (stack_len(ps, 'a') > 225)
-	//	divisions = 4;
+	if (stack_len(ps, 'a') > 225)
+		divisions = 8;
 	len = stack_len(ps, 'a') / divisions;
 
 
 
 	j = 0;
-	while (j < divisions)
+	while ((j < divisions) && (stack_len(ps, 'a') > 3))
 	{
 		median_value = find_nth_smallest(ps, 'a', len/2);
 		max = find_nth_smallest(ps, 'a', len);
@@ -58,7 +58,7 @@ void	quick_move(t_ps *ps)
 		if (ps->verbose)
 			ft_printf("\033[34mMoving to stack b\033[0m\n");
 		end = stack_len(ps, 'a');
-		while (end > 0)
+		while ((end > 0) && (stack_len(ps, 'a') > 3))
 		{
 			if (get_value_from_pos(ps, 'a', 1) < max)
 			{

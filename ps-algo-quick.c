@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 14:57:08 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/02/02 22:26:46 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/02/03 08:56:22 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int	algo_quick(t_ps *ps)
 		eco = economic_operation(ps);
 		align_stacks(ps, eco);
 	}
-	reverse_a(ps);
 	rotate_into_minimum(ps, 'a');
 	return (0);
 }
@@ -39,6 +38,12 @@ static void	rotate_into_minimum(t_ps *ps, char chr)
 
 	if (min(ps, chr) != get_value_from_pos(ps, chr, 1))
 	{
+		if (ps->verbose)
+		{
+			ft_printf("Rotating the minimum to the top\n");
+			ft_printf("\nmin: %i\n", min(ps, chr));
+			ft_printf("\nvalue on top %i\n", get_value_from_pos(ps, chr, 1));
+		}
 		steps = get_pos_from_value(ps, chr, min(ps, chr));
 		if (steps > (stack_len(ps, chr) / 2))
 		{
@@ -52,6 +57,7 @@ static void	rotate_into_minimum(t_ps *ps, char chr)
 		}
 		else
 		{
+			steps--;
 			while (steps > 0)
 			{
 				rotate(ps, chr);
