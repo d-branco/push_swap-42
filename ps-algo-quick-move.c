@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 20:49:20 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/02/04 12:45:10 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/02/04 13:01:03 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,17 @@ void	quick_move(t_ps *ps)
 	int	j;
 
 
-//8		6996
-//16	6981
+//8		6690
+//12			5743
+
+//16			5515
+//18				5415
+//20				5498
+//24			5762
+//32	6487
 	divisions = 4;
 	if (stack_len(ps, 'a') > 225)
-		divisions = 16;
+		divisions = 18;
 	len = stack_len(ps, 'a') / divisions;
 	j = 0;
 	while ((stack_len(ps, 'a') > 3))
