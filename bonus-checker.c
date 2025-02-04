@@ -44,6 +44,29 @@ static void	interpret_order(t_ps *ps, char *line)
 	//ft_printf("TESTING: %s", line);
 	if (line[0] == 's' && line[1] == 'a' && line[2] == '\n')
 		b_swap_a(ps);
+	if (line[0] == 's' && line[1] == 'b' && line[2] == '\n')
+		b_swap_b(ps);
+	if (line[0] == 's' && line[1] == 's' && line[2] == '\n')
+		b_swap_s(ps);
+
+	if (line[0] == 'p' && line[1] == 'a' && line[2] == '\n')
+		b_push_a(ps);
+	if (line[0] == 'p' && line[1] == 'b' && line[2] == '\n')
+		b_push_b(ps);
+
+	if (line[0] == 'r' && line[1] == 'a' && line[2] == '\n')
+		b_rotate_a(ps);
+	if (line[0] == 'r' && line[1] == 'b' && line[2] == '\n')
+		b_rotate_b(ps);
+	if (line[0] == 'r' && line[1] == 'r' && line[2] == '\n')
+		b_rotate_r(ps);
+
+	if (line[0] == 'r' && line[1] == 'r' && line[2] == 'a' && line[3] == '\n')
+		b_reverse_a(ps);
+	if (line[0] == 'r' && line[1] == 'r' && line[2] == 'b' && line[3] == '\n')
+		b_reverse_a(ps);
+	if (line[0] == 'r' && line[1] == 'r' && line[2] == 'r' && line[3] == '\n')
+		b_reverse_a(ps);
 	//TODO
 }
 
