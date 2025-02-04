@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 13:39:18 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/02/03 10:05:38 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/02/04 16:33:01 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 //	int		reverse_direction;
 //}			t_eco;
 
-static t_eco	get_eco_info(t_ps *ps, int pos_a, int pos_b);
+static t_eco	get_eco_info(t_ps *ps, int a, int b, t_eco eco);
 static int		cost_from_b_to_a(t_ps *ps, int a_pos, int b_pos);
 static int		shorter_in_reverse(t_ps *ps, int a_pos, int b_pos);
 static t_eco	eco_cheapest_op(t_ps *ps);
@@ -34,8 +34,8 @@ t_eco	economic_operation(t_ps *ps)
 	if (ps->verbose)
 	{
 		ft_printf("Found %i to place above %i		",
-			maximum_bellow(ps, 'b', get_value_from_pos(ps, 'a', eco.next_a)),
-			get_value_from_pos(ps, 'a', eco.next_a));
+			max_under(ps, 'b', get_value(ps, 'a', eco.next_a)),
+			get_value(ps, 'a', eco.next_a));
 		if (eco.reverse_direction)
 			ft_printf("    cost: %i step. Reverse: yes\n", eco.cost);
 		else
@@ -50,25 +50,18 @@ static t_eco	eco_cheapest_op(t_ps *ps)
 	int		b;
 	t_eco	eco;
 
-	a = 1;
 	eco.cost = stack_len(ps, 'a') + stack_len(ps, 'b') + 2;
 	eco.next_a = 1;
 	eco.next_b = 1;
 	eco.reverse_direction = 0;
+	a = 1;
 	while (a <= stack_len(ps, 'a'))
 	{
 		{
 			b = 1;
 			while (b <= stack_len(ps, 'b'))
 			{
-				if ((get_value_from_pos(ps, 'b', b)
-						== maximum_bellow(ps, 'b', get_value_from_pos(ps, 'a', a)))
-					&& ((get_value_from_pos(ps, 'a', a)
-							== minimum_above(ps, 'a', get_value_from_pos(ps, 'b', b)))))
-				{
-					if (eco.cost > cost_from_b_to_a(ps, a, b))
-						eco = get_eco_info(ps, a, b);
-				}
+				eco = get_eco_info(ps, a, b, eco);
 				b++;
 			}
 		}
@@ -77,14 +70,21 @@ static t_eco	eco_cheapest_op(t_ps *ps)
 	return (eco);
 }
 
-static t_eco	get_eco_info(t_ps *ps, int pos_a, int pos_b)
+static t_eco	get_eco_info(t_ps *ps, int a, int b, t_eco eco)
 {
-	t_eco	eco;
-
-	eco.cost = cost_from_b_to_a(ps, pos_a, pos_b);
-	eco.next_a = pos_a;
-	eco.next_b = pos_b;
-	eco.reverse_direction = shorter_in_reverse(ps, pos_a, pos_b);
+	if ((get_value(ps, 'b', b)
+			== max_under(ps, 'b', get_value(ps, 'a', a)))
+		&& ((get_value(ps, 'a', a)
+				== min_above(ps, 'a', get_value(ps, 'b', b)))))
+	{
+		if (eco.cost > cost_from_b_to_a(ps, a, b))
+		{
+			eco.cost = cost_from_b_to_a(ps, a, b);
+			eco.next_a = a;
+			eco.next_b = b;
+			eco.reverse_direction = shorter_in_reverse(ps, a, b);
+		}
+	}
 	return (eco);
 }
 

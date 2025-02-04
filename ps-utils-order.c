@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 11:24:38 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/02/02 14:13:35 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/02/04 16:05:55 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	max(t_ps *ps, char chr)
 	return (max);
 }
 
-int	get_value_from_pos(t_ps *ps, char chr, int n)
+int	get_value(t_ps *ps, char chr, int n)
 {
 	t_list	*lst;
 	int		pos;

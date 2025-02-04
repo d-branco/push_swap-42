@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 12:44:00 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/02/01 14:22:37 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/02/04 16:06:57 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,15 @@ int	median(t_ps *ps, char chr)
 	mediam = max(ps, chr);
 	while (i < steps)
 	{
-		mediam = maximum_bellow(ps, chr, mediam);
+		mediam = max_under(ps, chr, mediam);
 		i++;
 	}
 	if (len % 2 == 0)
-		mediam = (mediam + (maximum_bellow(ps, chr, mediam))) / 2;
+		mediam = (mediam + (max_under(ps, chr, mediam))) / 2;
 	return (mediam);
 }
 
-int	maximum_bellow(t_ps *ps, char chr, int border)
+int	max_under(t_ps *ps, char chr, int border)
 {
 	t_list	*lst;
 	int		max_bellow;
@@ -56,7 +56,7 @@ int	maximum_bellow(t_ps *ps, char chr, int border)
 	return (max_bellow);
 }
 
-int	minimum_above(t_ps *ps, char chr, int border)
+int	min_above(t_ps *ps, char chr, int border)
 {
 	t_list	*lst;
 	int		min_above;

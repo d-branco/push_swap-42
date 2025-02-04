@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 14:57:08 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/02/03 10:26:24 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/02/04 16:24:38 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	align_stacks(t_ps *ps, t_eco eco);
 static void	align_stacks_direction(t_ps *ps, t_eco eco);
-static void	rotate_into_minimum(t_ps *ps, char chr);
+static void	align_reverse_rotate(t_ps *ps, int steps_a, int steps_b);
 
 int	algo_quick(t_ps *ps)
 {
@@ -31,50 +31,6 @@ int	algo_quick(t_ps *ps)
 	return (0);
 }
 
-static void	rotate_into_minimum(t_ps *ps, char chr)
-{
-	int	steps;
-
-	if (min(ps, chr) != get_value_from_pos(ps, chr, 1))
-	{
-		if (ps->verbose)
-		{
-			ft_printf("Rotating the minimum to the top\n");
-			ft_printf("\nmin: %i\n", min(ps, chr));
-			ft_printf("\nvalue on top %i\n", get_value_from_pos(ps, chr, 1));
-		}
-		steps = get_pos_from_value(ps, chr, min(ps, chr));
-		if (steps > (stack_len(ps, chr) / 2))
-		{
-			steps = stack_len(ps, chr) - steps + 1;
-			while (steps > 0)
-			{
-				if (chr == 'a')
-					reverse_a(ps);
-				if (chr == 'b')
-					reverse_b(ps);
-				steps--;
-				print_stacks(ps);
-			}
-		}
-		else
-		{
-			steps--;
-			while (steps > 0)
-			{
-				if (chr == 'a')
-					rotate_a(ps);
-				if (chr == 'b')
-					rotate_b(ps);
-				steps--;
-				print_stacks(ps);
-			}
-		}
-	}
-	if (ps->verbose)
-		check_order(ps, chr);
-}
-
 static void	align_stacks(t_ps *ps, t_eco eco)
 {
 	int	steps_a;
@@ -87,23 +43,28 @@ static void	align_stacks(t_ps *ps, t_eco eco)
 		else
 			steps_a = (stack_len(ps, 'a') - eco.next_a) + 1;
 		steps_b = 1 + stack_len(ps, 'b') - get_pos_from_value(ps, 'b',
-				maximum_bellow(ps, 'b', get_value_from_pos(ps, 'a',
+				max_under(ps, 'b', get_value(ps, 'a',
 						eco.next_a)));
-		while ((steps_a > 0) || (steps_b > 0))
-		{
-			if ((steps_a > 0) && (steps_b > 0))
-				reverse_rr(ps);
-			else if (steps_a > 0)
-				reverse_a(ps);
-			else if (steps_b > 0)
-				reverse_b(ps);
-			steps_a--;
-			steps_b--;
-		}
+		align_reverse_rotate(ps, steps_a, steps_b);
 	}
 	else
 		align_stacks_direction(ps, eco);
 	push_a(ps);
+}
+
+static void	align_reverse_rotate(t_ps *ps, int steps_a, int steps_b)
+{
+	while ((steps_a > 0) || (steps_b > 0))
+	{
+		if ((steps_a > 0) && (steps_b > 0))
+			reverse_rr(ps);
+		else if (steps_a > 0)
+			reverse_a(ps);
+		else if (steps_b > 0)
+			reverse_b(ps);
+		steps_a--;
+		steps_b--;
+	}
 }
 
 static void	align_stacks_direction(t_ps *ps, t_eco eco)

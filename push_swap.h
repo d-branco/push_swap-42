@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 11:36:02 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/02/03 10:24:03 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/02/04 16:16:26 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ t_eco	economic_operation(t_ps *ps);
 void	move_to_b(t_ps *ps);
 void	quick_move(t_ps *ps);
 int		find_nth_smallest(t_ps *ps, char chr, int len);
+//ps-algo-quick-rotate
+void	rotate_into_minimum(t_ps *ps, char chr);
 //ps-op
 void	push_stack(t_ps *ps, char chr);
 void	swap_stack(t_ps *ps, char chr);
@@ -79,13 +81,13 @@ void	rotate_stack(t_ps *ps, char chr);
 void	reverse_stack(t_ps *ps, char chr);
 //ps-utils-order
 int		get_pos_from_value(t_ps *ps, char chr, int value);
-int		get_value_from_pos(t_ps *ps, char chr, int n);
+int		get_value(t_ps *ps, char chr, int n);
 int		max(t_ps *ps, char chr);
 int		min(t_ps *ps, char chr);
 int		stack_len(t_ps *ps, char chr);
 //ps-utils-median
 int		median(t_ps *ps, char chr);
-int		maximum_bellow(t_ps *ps, char chr, int border);
-int		minimum_above(t_ps *ps, char chr, int border);
+int		max_under(t_ps *ps, char chr, int border);
+int		min_above(t_ps *ps, char chr, int border);
 
 #endif
