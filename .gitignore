@@ -1,4 +1,7 @@
 # Project
+*test*/
+*.txt
+*test*
 push_swap
 *.mp4
 *.mp3
@@ -56,3 +59,8 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+push_swap_tester
+0
+push_swap_tester
+push_swap_tester
+result.txt
