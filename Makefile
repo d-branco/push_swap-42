@@ -6,7 +6,7 @@
 #    By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/27 19:31:29 by abessa-m          #+#    #+#              #
-#    Updated: 2025/02/04 16:15:55 by abessa-m         ###   ########.fr        #
+#    Updated: 2025/02/04 18:16:34 by abessa-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,11 +27,11 @@ test: re
 #	echo "$(GRAY)Return value: $$?$(COR)" ; \
 
 NAME		:= push_swap
+NAME-BONUS	:= checker
 LIBFT		:= libft.a
 #################################################################### Compiler  #
 CC			:= cc
-CFLAGS		:= -g  -Wall -Wextra 
-#-Werror
+CFLAGS		:= -g  -Wall -Wextra -Werror
 ########################################################## Intermidiate steps  #
 RM			:= rm -f
 AR			:= ar rcs
@@ -50,6 +50,13 @@ SRCS		= \
 	ps-algo-quick-rotate.c 
 	
 OBJS		= $(SRCS:.c=.o)
+
+SRCS-BONUS		= \
+	bonus-checker.c bonus-checker-initialize.c bonus-utils-stack.c \
+	bonus-op-push_bonus.c bonus-op-reverse_bonus.c \
+	bonus-op-rotate_bonus.c bonus-op-swap_bonus.c 
+
+OBJS-BONUS		= $(SRCS-BONUS:.c=.o)
 ##################################################################### Targets  #
 all: $(LIBFT) $(NAME)
 
@@ -63,15 +70,17 @@ $(NAME): $(OBJS) $(LIBFT)
 $(LIBFT):
 	@make --no-print-directory -C ./libft/ 
 
-bonus: $(LIBFT)
+bonus: $(OBJS-BONUS) $(LIBFT)
+	@$(CC) $(CFLAGS) $(SRCS-BONUS) $(LIBFT) -o $(NAME-BONUS) \
+	&& echo "$(GRAY)Compiled:$(COR) $(SRCS-BONUS)"
 
 clean:
 	@$(RM) *.o *.gch ; \
 	make --no-print-directory -C libft/ clean 
 
 fclean: clean
-	@@make --no-print-directory -C libft/ fclean \
-	&& $(RM) $(NAME) 
+	@make --no-print-directory -C libft/ fclean \
+	&& $(RM) $(NAME) $(NAME-BONUS)
 
 re: fclean all	
 	@echo "$(GRAY)redone$(COR)"

@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 11:36:02 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/02/04 16:16:26 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/02/04 18:12:37 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,29 @@ int		stack_len(t_ps *ps, char chr);
 int		median(t_ps *ps, char chr);
 int		max_under(t_ps *ps, char chr, int border);
 int		min_above(t_ps *ps, char chr, int border);
+
+//bonus-checker
+//bonus-checker-initializer
+int		initialize_bonus(t_ps *ps, int argc, char **argv, int verbose);
+//bonus-utils-stack
+void	print_stacks_bonus(t_ps *ps);
+int		is_int_bonus(const char *nptr);
+void	del_bonus(void *content);
+int		stack_len_bonus(t_ps *ps, char chr);
+//bonus-op-swap
+void	b_swap_a(t_ps *ps);
+void	b_swap_b(t_ps *ps);
+void	b_swap_ss(t_ps *ps);
+//bonus-op-push
+void	b_push_a(t_ps *ps);
+void	b_push_b(t_ps *ps);
+//bonus-op-rotate
+void	b_rotate_a(t_ps *ps);
+void	b_rotate_b(t_ps *ps);
+void	b_rotate_rr(t_ps *ps);
+//bonus-op-reverse
+void	b_reverse_a(t_ps *ps);
+void	b_reverse_b(t_ps *ps);
+void	b_reverse_rr(t_ps *ps);
 
 #endif
