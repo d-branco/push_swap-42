@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 11:35:34 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/02/02 17:56:41 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/02/03 10:24:27 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ rrr : rra and rrb at the same time.
 */
 
 static void	reverse_element(t_list **lst);
+static int	reverse(t_ps *ps, char chr);
 
-int	reverse(t_ps *ps, char chr)
+static int	reverse(t_ps *ps, char chr)
 {
 	t_list	**lst;
 

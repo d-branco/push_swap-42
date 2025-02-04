@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 11:35:47 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/02/03 08:57:02 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/02/04 09:21:27 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ int	main(int argc, char **argv)
 		algo_small(&ps);
 	else
 		algo_quick(&ps);
-	//	quick_move(&ps);
-	//	algo_buble(&ps, 'a');
 	ft_lstclear(&ps.a, (void (*)(void *))del);
 	ft_lstclear(&ps.b, (void (*)(void *))del);
 }
+	//	quick_move(&ps);
+	//	algo_buble(&ps, 'a');

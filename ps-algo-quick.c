@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 14:57:08 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/02/03 08:56:22 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/02/03 10:26:24 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int	algo_quick(t_ps *ps)
 {
 	t_eco	eco;
 
-	//move_to_b(ps);
 	quick_move(ps);
 	algo_small(ps);
 	while (stack_len(ps, 'b') > 0)
@@ -50,7 +49,10 @@ static void	rotate_into_minimum(t_ps *ps, char chr)
 			steps = stack_len(ps, chr) - steps + 1;
 			while (steps > 0)
 			{
-				reverse(ps, chr);
+				if (chr == 'a')
+					reverse_a(ps);
+				if (chr == 'b')
+					reverse_b(ps);
 				steps--;
 				print_stacks(ps);
 			}
@@ -60,7 +62,10 @@ static void	rotate_into_minimum(t_ps *ps, char chr)
 			steps--;
 			while (steps > 0)
 			{
-				rotate(ps, chr);
+				if (chr == 'a')
+					rotate_a(ps);
+				if (chr == 'b')
+					rotate_b(ps);
 				steps--;
 				print_stacks(ps);
 			}

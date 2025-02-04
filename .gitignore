@@ -1,5 +1,8 @@
 # Project
 push_swap
+*.mp4
+*.mp3
+*.wav
 
 # Prerequisites
 *.d
