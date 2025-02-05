@@ -30,5 +30,3 @@ int	main(int argc, char **argv)
 	ft_lstclear(&ps.a, (void (*)(void *))del);
 	ft_lstclear(&ps.b, (void (*)(void *))del);
 }
-	//	quick_move(&ps);
-	//	algo_buble(&ps, 'a');

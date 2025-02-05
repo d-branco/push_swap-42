@@ -37,7 +37,9 @@ void	quick_move(t_ps *ps)
 {
 	int	len;
 
-	len = 12;
+	len = 5;
+	if (stack_len(ps, 'a') > 42)
+		len = 12;
 	if (stack_len(ps, 'a') > 225)
 		len = 22;
 	if (ps->verbose)

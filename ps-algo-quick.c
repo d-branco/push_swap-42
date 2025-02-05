@@ -20,6 +20,8 @@ int	algo_quick(t_ps *ps)
 {
 	t_eco	eco;
 
+	if (check_order(ps, 'a') == 0)
+		return (0);
 	quick_move(ps);
 	algo_small(ps);
 	while (stack_len(ps, 'b') > 0)

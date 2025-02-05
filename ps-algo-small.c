@@ -28,7 +28,7 @@ int	algo_small(t_ps *ps)
 		if (check_order(ps, 'a') != 0)
 			return (swap_a(ps), check_order(ps, 'a'), 0);
 	}
-	else if ((ft_lstsize(ps->a) == 3) && (check_order(ps, 'a') != 0))
+	else if ((ft_lstsize(ps->a) >= 3) && (check_order(ps, 'a') != 0))
 		algo_three(ps);
 	return (0);
 }
