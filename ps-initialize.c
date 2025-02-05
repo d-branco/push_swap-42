@@ -6,7 +6,7 @@
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 16:44:16 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/01/30 17:44:03 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/02/05 10:56:45 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static int	add_numbers_to_stack(t_ps *ps, char **numbers)
 	while (numbers[i])
 	{
 		num = (int *) malloc(sizeof(int) * 1);
-		if (!num)
+		if (!num || numbers[i][0] == '\0')
 			return (3);
 		*num = ft_atoi(numbers[i]);
 		if (ps->verbose)
