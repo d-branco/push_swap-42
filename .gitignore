@@ -1,4 +1,7 @@
 # Project
+push_swap_tester
+0
+result.txt
 *test*/
 *.txt
 *test*
@@ -59,9 +62,3 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
-push_swap_tester
-0
-push_swap_tester
-push_swap_tester
-result.txt
-push_swap_tester
