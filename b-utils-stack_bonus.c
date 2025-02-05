@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bonus-utils-stack.c                                :+:      :+:    :+:   */
+/*   b-utils-stack_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 19:39:53 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/02/04 16:52:43 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/02/05 07:24:35 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 void	print_stacks_bonus(t_ps *ps)
 {

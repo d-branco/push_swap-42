@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bonus-checker-initialize.c                         :+:      :+:    :+:   */
+/*   b-checker-initialize_bonus.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 16:38:54 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/02/04 16:54:32 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/02/05 07:24:19 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 static int	is_valid_int(int argc, char **argv);
 static int	is_valid_str(int argc, char **argv);

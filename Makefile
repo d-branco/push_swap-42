@@ -6,7 +6,7 @@
 #    By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/27 19:31:29 by abessa-m          #+#    #+#              #
-#    Updated: 2025/02/04 18:16:34 by abessa-m         ###   ########.fr        #
+#    Updated: 2025/02/05 07:26:24 by abessa-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,9 +52,9 @@ SRCS		= \
 OBJS		= $(SRCS:.c=.o)
 
 SRCS-BONUS		= \
-	bonus-checker.c bonus-checker-initialize.c bonus-utils-stack.c \
-	bonus-op-push_bonus.c bonus-op-reverse_bonus.c \
-	bonus-op-rotate_bonus.c bonus-op-swap_bonus.c 
+	b-checker_bonus.c b-checker-initialize_bonus.c b-utils-stack_bonus.c \
+	b-op-push_bonus.c b-op-reverse_bonus.c \
+	b-op-rotate_bonus.c b-op-swap_bonus.c 
 
 OBJS-BONUS		= $(SRCS-BONUS:.c=.o)
 ##################################################################### Targets  #

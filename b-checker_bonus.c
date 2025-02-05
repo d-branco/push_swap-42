@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bonus-checker.c                                    :+:      :+:    :+:   */
+/*   b-checker_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abessa-m <abessa-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 16:35:33 by abessa-m          #+#    #+#             */
-/*   Updated: 2025/02/04 18:27:39 by abessa-m         ###   ########.fr       */
+/*   Updated: 2025/02/05 07:24:13 by abessa-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 static int	check_order_bonus(t_ps *ps);
 static void	interpret_order(t_ps *ps, char *line);
@@ -20,10 +20,8 @@ int	main(int argc, char **argv)
 	int		verbose;
 	t_ps	ps;
 	char	*line;
-	int		correct;
 
 	verbose = 0;
-	correct = 0;
 	if (argc == 1)
 		return (1);
 	if (initialize_bonus(&ps, argc, argv, verbose) != 0)
@@ -41,33 +39,28 @@ int	main(int argc, char **argv)
 
 static void	interpret_order(t_ps *ps, char *line)
 {
-	//ft_printf("TESTING: %s", line);
 	if (line[0] == 's' && line[1] == 'a' && line[2] == '\n')
 		b_swap_a(ps);
 	if (line[0] == 's' && line[1] == 'b' && line[2] == '\n')
 		b_swap_b(ps);
 	if (line[0] == 's' && line[1] == 's' && line[2] == '\n')
-		b_swap_s(ps);
-
+		b_swap_ss(ps);
 	if (line[0] == 'p' && line[1] == 'a' && line[2] == '\n')
 		b_push_a(ps);
 	if (line[0] == 'p' && line[1] == 'b' && line[2] == '\n')
 		b_push_b(ps);
-
 	if (line[0] == 'r' && line[1] == 'a' && line[2] == '\n')
 		b_rotate_a(ps);
 	if (line[0] == 'r' && line[1] == 'b' && line[2] == '\n')
 		b_rotate_b(ps);
 	if (line[0] == 'r' && line[1] == 'r' && line[2] == '\n')
-		b_rotate_r(ps);
-
+		b_rotate_rr(ps);
 	if (line[0] == 'r' && line[1] == 'r' && line[2] == 'a' && line[3] == '\n')
 		b_reverse_a(ps);
 	if (line[0] == 'r' && line[1] == 'r' && line[2] == 'b' && line[3] == '\n')
-		b_reverse_a(ps);
+		b_reverse_b(ps);
 	if (line[0] == 'r' && line[1] == 'r' && line[2] == 'r' && line[3] == '\n')
-		b_reverse_a(ps);
-	//TODO
+		b_reverse_rr(ps);
 }
 
 static int	check_order_bonus(t_ps *ps)
